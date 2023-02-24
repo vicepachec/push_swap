@@ -1,26 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_str_tolower.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vpacheco <vpacheco@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: vpacheco <vpacheco@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/06 17:20:39 by vpacheco          #+#    #+#             */
-/*   Updated: 2023/02/16 16:55:55 by vpacheco         ###   ########.fr       */
+/*   Created: 2021/06/25 19:38:41 by vpacheco          #+#    #+#             */
+/*   Updated: 2021/06/30 12:28:28 by vpacheco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "../includes/ft_printf.h"
 
-#include <stdlib.h>
-#include "../ft_printf/includes/ft_printf.h"
-
-typedef struct s_list
+char	*ft_str_tolower(char *str)
 {
-	int				index;
-	int				value;
-	struct s_list	*next;
-}	t_list;
+	int	i;
 
-#endif
+	i = -1;
+	while (str[++i])
+		str[i] = ft_tolower(str[i]);
+	return (str);
+}

@@ -1,26 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vpacheco <vpacheco@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/06 17:20:39 by vpacheco          #+#    #+#             */
-/*   Updated: 2023/02/16 16:55:55 by vpacheco         ###   ########.fr       */
+/*   Created: 2023/02/22 16:35:00 by vpacheco          #+#    #+#             */
+/*   Updated: 2023/02/22 17:51:13 by vpacheco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "../headers/push_swap.h"
 
-#include <stdlib.h>
-#include "../ft_printf/includes/ft_printf.h"
-
-typedef struct s_list
+int	ra(t_list **a)
 {
-	int				index;
-	int				value;
-	struct s_list	*next;
-}	t_list;
+	t_list	*tmp;
 
-#endif
+	tmp = *a;
+	*a = (*a)->next;
+}

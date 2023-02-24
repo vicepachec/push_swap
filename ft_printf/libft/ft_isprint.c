@@ -1,26 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vpacheco <vpacheco@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: tisantos <tisantos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/06 17:20:39 by vpacheco          #+#    #+#             */
-/*   Updated: 2023/02/16 16:55:55 by vpacheco         ###   ########.fr       */
+/*   Created: 2020/12/04 22:49:13 by marvin            #+#    #+#             */
+/*   Updated: 2021/02/10 05:42:22 by tisantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "libft.h"
 
-#include <stdlib.h>
-#include "../ft_printf/includes/ft_printf.h"
-
-typedef struct s_list
+int	ft_isprint(int c)
 {
-	int				index;
-	int				value;
-	struct s_list	*next;
-}	t_list;
-
-#endif
+	if (c >= 32 && c <= 126)
+		return (1);
+	return (0);
+}

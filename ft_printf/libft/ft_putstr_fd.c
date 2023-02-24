@@ -1,26 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vpacheco <vpacheco@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: tisantos <tisantos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/06 17:20:39 by vpacheco          #+#    #+#             */
-/*   Updated: 2023/02/16 16:55:55 by vpacheco         ###   ########.fr       */
+/*   Created: 2020/12/12 15:21:00 by marvin            #+#    #+#             */
+/*   Updated: 2021/02/09 04:14:19 by tisantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "libft.h"
 
-#include <stdlib.h>
-#include "../ft_printf/includes/ft_printf.h"
-
-typedef struct s_list
+void	ft_putstr_fd(char *s, int fd)
 {
-	int				index;
-	int				value;
-	struct s_list	*next;
-}	t_list;
+	int	i;
 
-#endif
+	i = 0;
+	if (!s || fd < 0)
+		return ;
+	while (s[i])
+		ft_putchar_fd(s[i++], fd);
+}

@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vpacheco <vpacheco@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/06 17:20:39 by vpacheco          #+#    #+#             */
-/*   Updated: 2023/02/16 16:55:55 by vpacheco         ###   ########.fr       */
+/*   Created: 2021/06/25 19:36:43 by vpacheco          #+#    #+#             */
+/*   Updated: 2021/06/28 17:33:20 by vpacheco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "libft.h"
 
-#include <stdlib.h>
-#include "../ft_printf/includes/ft_printf.h"
-
-typedef struct s_list
+char	*ft_strdup(const char *s1)
 {
-	int				index;
-	int				value;
-	struct s_list	*next;
-}	t_list;
+	char	*rtn;
+	size_t	len;
 
-#endif
+	len = ft_strlen(s1) + 1;
+	rtn = malloc(sizeof(char) * len);
+	if (!rtn)
+		return (0);
+	rtn = ft_memcpy(rtn, s1, len);
+	return (rtn);
+}

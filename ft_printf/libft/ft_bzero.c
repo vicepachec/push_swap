@@ -1,26 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vpacheco <vpacheco@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: vpacheco <vpacheco@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/06 17:20:39 by vpacheco          #+#    #+#             */
-/*   Updated: 2023/02/16 16:55:55 by vpacheco         ###   ########.fr       */
+/*   Created: 2020/12/06 03:18:04 by marvin            #+#    #+#             */
+/*   Updated: 2021/06/30 11:30:36 by vpacheco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "libft.h"
 
-#include <stdlib.h>
-#include "../ft_printf/includes/ft_printf.h"
-
-typedef struct s_list
+void	ft_bzero(void *s, size_t n)
 {
-	int				index;
-	int				value;
-	struct s_list	*next;
-}	t_list;
+	unsigned char	*str_ptr;
+	size_t			i;
 
-#endif
+	str_ptr = (unsigned char *)s;
+	i = 0;
+	while (i < n)
+	{
+		str_ptr[i] = 0;
+		i++;
+	}
+}

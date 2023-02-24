@@ -1,26 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vpacheco <vpacheco@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: tisantos <tisantos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/06 17:20:39 by vpacheco          #+#    #+#             */
-/*   Updated: 2023/02/16 16:55:55 by vpacheco         ###   ########.fr       */
+/*   Created: 2020/12/15 20:08:26 by marvin            #+#    #+#             */
+/*   Updated: 2021/02/09 04:02:02 by tisantos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "libft.h"
 
-#include <stdlib.h>
-#include "../ft_printf/includes/ft_printf.h"
-
-typedef struct s_list
+t_list	*ft_lstnew(void *content)
 {
-	int				index;
-	int				value;
-	struct s_list	*next;
-}	t_list;
+	t_list	*new;
 
-#endif
+	new = malloc(sizeof(t_list));
+	if (new == NULL)
+		return (NULL);
+	if (new)
+	{
+		new->content = content;
+		new->next = NULL;
+	}
+	return (new);
+}

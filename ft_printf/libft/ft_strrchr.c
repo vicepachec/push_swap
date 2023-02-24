@@ -1,26 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vpacheco <vpacheco@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/06 17:20:39 by vpacheco          #+#    #+#             */
-/*   Updated: 2023/02/16 16:55:55 by vpacheco         ###   ########.fr       */
+/*   Created: 2020/12/03 21:22:19 by marvin            #+#    #+#             */
+/*   Updated: 2020/12/19 17:21:19 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "libft.h"
 
-#include <stdlib.h>
-#include "../ft_printf/includes/ft_printf.h"
-
-typedef struct s_list
+char	*ft_strrchr(const char *str, int c)
 {
-	int				index;
-	int				value;
-	struct s_list	*next;
-}	t_list;
+	char	*last;
 
-#endif
+	last = 0;
+	if (c == '\0')
+		return ((char *)str + ft_strlen(str));
+	while (*str)
+	{
+		if (*str == c)
+		{
+			last = ((char *)str);
+		}
+		str++;
+	}
+	return (last);
+}
