@@ -1,50 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rotate.c                                           :+:      :+:    :+:   */
+/*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vpacheco <vpacheco@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/22 16:35:00 by vpacheco          #+#    #+#             */
-/*   Updated: 2023/02/27 15:35:13 by vpacheco         ###   ########.fr       */
+/*   Created: 2023/02/27 15:37:58 by vpacheco          #+#    #+#             */
+/*   Updated: 2023/02/27 15:44:57 by vpacheco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/push_swap.h"
 
-int	ra(t_list **a)
+int	pa(t_list **a, t_list **b)
 {
 	t_list	*tmp;
+	t_list	*tmp2;
 
 	tmp = *a;
-	*a = (*a)->next;
-	ft_lstadd_back(a, tmp);
-	tmp->next = NULL;
-	ft_printf("ra\n");
-}
-
-int	rb(t_list **b)
-{
-	t_list	*tmp;
-
-	tmp = *b;
-	*b = (*b)->next;
-	ft_lstadd_back(b, tmp);
-	tmp->next = NULL;
-	ft_printf("rb\n");
-}
-
-int	rr(t_list **a, t_list **b)
-{
-	t_list	*tmp;
-
-	tmp = *a;
-	*a = (*a)->next;
-	ft_lstadd_back(a, tmp);
-	tmp->next = NULL;
-	tmp = *b;
-	*b = (*b)->next;
-	ft_lstadd_back(b, tmp);
-	tmp->next = NULL;
-	ft_printf("rr\n");
+	tmp2 = *b;
+	if ((*b))
+		tmp2->next = tmp;
+	ft_printf("pa\n");
 }
