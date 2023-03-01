@@ -6,11 +6,11 @@
 /*   By: vpacheco <vpacheco@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 16:47:16 by vpacheco          #+#    #+#             */
-/*   Updated: 2023/02/28 16:47:53 by vpacheco         ###   ########.fr       */
+/*   Updated: 2023/03/01 18:29:43 by vpacheco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "headers/push_swap.h"
+#include "../headers/push_swap.h"
 
 t_list	*new_node(int value)
 {
@@ -27,7 +27,7 @@ t_list	*new_node(int value)
 
 void	insert(t_list *node, t_list **list)
 {
-	t_list	*temp;
+	t_list *temp;
 
 	if (node == NULL)
 		return ;
@@ -42,25 +42,28 @@ void	insert(t_list *node, t_list **list)
 	temp->next = node;
 }
 
-int	ft_atoi(char **str)
+int	ft_atoi2(char *str)
 {
 	long	signal;
 	long	num;
+	t_list	**a = NULL;
 
-	signal = -1;
+	signal = 1;
 	num = 0;
-	while (**str == ' ' || **str == '\t')
-		*str += 1;
-	if (**str == '+' || **str == '-')
+	while (*str == ' ' || *str == '\t')
+		str += 1;
+	if (*str == '+' || *str == '-')
 	{
-		if (**str == '-')
+		if (*str == '-')
 			signal = -1;
-		*str += 1;
+		str += 1;
 	}
-	while (**str >= '0' && **str <= '9')
+	while (*str >= '0' && *str <= '9')
 	{
-		num = num * 10 + (**str - 48) * signal;
-		*str += 1;
+		num = num * 10 + (*str - 48) * signal;
+		str += 1;
+		if (num > INT_MAX || num < INT_MIN)
+			exit_prog(1, a);
 	}
 	return (num);
 }

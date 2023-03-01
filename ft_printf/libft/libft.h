@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vpacheco <vpacheco@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vpacheco <vpacheco@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/02 18:33:47 by marvin            #+#    #+#             */
-/*   Updated: 2021/06/30 13:41:40 by vpacheco         ###   ########.fr       */
+/*   Updated: 2023/03/01 18:12:28 by vpacheco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,10 @@
 typedef struct s_list
 {
 	void			*content;
+	int				index;
+	int				value;
+	int				max;
+	int				min;
 	struct s_list	*next;
 }					t_list;
 

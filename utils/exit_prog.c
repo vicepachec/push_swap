@@ -1,21 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   exit_prog.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vpacheco <vpacheco@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/06 16:52:08 by vpacheco          #+#    #+#             */
-/*   Updated: 2023/03/01 18:24:48 by vpacheco         ###   ########.fr       */
+/*   Created: 2023/03/01 15:14:24 by vpacheco          #+#    #+#             */
+/*   Updated: 2023/03/01 15:17:45 by vpacheco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "headers/push_swap.h"
+#include "../headers/push_swap.h"
 
-int	main(int ac, char **av)
+void	exit_prog(int i, t_list **a)
 {
-	t_list **a = NULL;
-	
-	(void)ac;
-	parse_values(av, a);
+	if (i)
+		ft_printf("Error\n");
+	free_list(a);
+	exit(i);
+}
+
+void	free_list(t_list **a)
+{
+	t_list	*tmp;
+
+	while (a)
+	{
+		tmp = *a;
+		*a = (*a)->next;
+		free (tmp);
+	}
 }
