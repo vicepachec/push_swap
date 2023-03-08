@@ -6,7 +6,7 @@
 /*   By: vpacheco <vpacheco@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 16:47:16 by vpacheco          #+#    #+#             */
-/*   Updated: 2023/03/01 18:29:43 by vpacheco         ###   ########.fr       */
+/*   Updated: 2023/03/08 16:02:31 by vpacheco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,4 +66,29 @@ int	ft_atoi2(char *str)
 			exit_prog(1, a);
 	}
 	return (num);
+}
+
+int	is_ordered(t_list *a)
+{
+	if (!a)
+		return (0);
+	while (a->next)
+	{
+		if (a->value > a->next->value)
+			return (0);
+		a = a->next;
+	}
+	return (1);
+}
+
+void	max_min(t_list *a, int *min, int *max)
+{
+	while(a)
+	{
+		if (a->value < *min)
+			*min = a->value;
+		if (a->value > *max)
+			*max = a->value;
+		a = a->next;
+	}
 }

@@ -1,33 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   exit_prog.c                                        :+:      :+:    :+:   */
+/*   algorythms.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vpacheco <vpacheco@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/01 15:14:24 by vpacheco          #+#    #+#             */
-/*   Updated: 2023/03/08 15:33:43 by vpacheco         ###   ########.fr       */
+/*   Created: 2023/03/08 15:48:47 by vpacheco          #+#    #+#             */
+/*   Updated: 2023/03/08 16:06:32 by vpacheco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/push_swap.h"
 
-void	exit_prog(int i, t_list **a)
+int	algo_3(t_list **a)
 {
-	if (i)
-		write(2, "Error\n", 6);
-	free_list(a);
-	exit(i);
-}
+	int min;
+	int max;
 
-void	free_list(t_list **a)
-{
-	t_list	*tmp;
-
-	while (a)
-	{
-		tmp = *a;
-		*a = (*a)->next;
-		free (tmp);
-	}
+	min = INT_MAX;
+	max = INT_MIN;
+	max_min(*a, &min, &max);
+	if ((*a)->value == max)
+		ra(a);
 }
