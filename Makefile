@@ -2,6 +2,11 @@ SRCS	=	main.c \
 			utils/utils.c \
 			utils/exit_prog.c \
 			utils/parse_numbers.c \
+			utils/swap.c \
+			utils/algorythms.c \
+			utils/rotate.c \
+			utils/reverserotate.c \
+			utils/push.c \
 			
 OBJS	= $(SRCS:.c=.o)
 

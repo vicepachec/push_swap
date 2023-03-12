@@ -6,7 +6,7 @@
 /*   By: vpacheco <vpacheco@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 15:14:24 by vpacheco          #+#    #+#             */
-/*   Updated: 2023/03/08 15:33:43 by vpacheco         ###   ########.fr       */
+/*   Updated: 2023/03/12 16:50:24 by vpacheco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	free_list(t_list **a)
 {
 	t_list	*tmp;
 
-	while (a)
+	while (*a)
 	{
 		tmp = *a;
 		*a = (*a)->next;

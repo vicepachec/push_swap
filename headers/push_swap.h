@@ -6,7 +6,7 @@
 /*   By: vpacheco <vpacheco@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 17:08:01 by vpacheco          #+#    #+#             */
-/*   Updated: 2023/03/08 17:08:02 by vpacheco         ###   ########.fr       */
+/*   Updated: 2023/03/12 20:12:56 by vpacheco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,17 @@
 
 void		exit_prog(int i, t_list **a);
 void		free_list(t_list **a);
-int			ft_atoi2(char *str);
+int			ft_atoi2(char **str, t_list **a);
 void		parse_values(char **av, t_list **a);
 int			is_ordered(t_list *a);
-int			sa(t_list **a);
-int			ra(t_list **a);
+void		sa(t_list **a);
+void		ra(t_list **a);
+void		rra(t_list **a);
+void		pa(t_list **a, t_list **b);
+void		pb(t_list **a, t_list **b);
 void		max_min(t_list *a, int *min, int *max);
-
+void		algo_3(t_list **a);
+void		insert(t_list **head, int item);
+t_list		*new_node(int value);
+void 		algo_4(t_list **a, t_list **b);
 #endif

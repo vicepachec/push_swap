@@ -6,7 +6,7 @@
 /*   By: vpacheco <vpacheco@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 15:02:20 by vpacheco          #+#    #+#             */
-/*   Updated: 2023/03/01 18:32:05 by vpacheco         ###   ########.fr       */
+/*   Updated: 2023/03/12 17:37:08 by vpacheco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,18 +29,22 @@ void	is_nbr(char *s, t_list **a)
 void	parse_values(char **av, t_list **a)
 {
 	int		i;
-	char	*s;
-	int		num;
+	long	num;
+	char	*str;
 
 	i = 0;
-	(void)a;
-	while(av[++i])
+	while (av[++i] && av)
 	{
-		s = av[i];
-		if(s)	
+		str = av[i];
+		if (!*str)
+			exit_prog(1, a);
+		while (*str)
 		{
-			num	= ft_atoi2(s);
-			ft_printf("%i\n", num);
+			while (*str == ' ')
+				str++;
+			is_nbr(str, a);
+			num = ft_atoi2(&str, a);
+			insert(a, num);
 		}
 	}
 }

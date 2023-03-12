@@ -6,26 +6,27 @@
 /*   By: vpacheco <vpacheco@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 16:47:16 by vpacheco          #+#    #+#             */
-/*   Updated: 2023/03/08 16:02:31 by vpacheco         ###   ########.fr       */
+/*   Updated: 2023/03/12 17:44:12 by vpacheco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/push_swap.h"
 
-t_list	*new_node(int value)
+void	insert(t_list **head, int value)
 {
-	t_list	*node;
+	t_list	*temp;
 
-	node = malloc(sizeof(t_list));
-	if (node == NULL)
-		return (NULL);
-	node->index = -1;
-	node->value = value;
-	node->next = NULL;
-	return (node);
+	temp = malloc(sizeof(t_list));
+	if (!temp)
+		return ;
+	temp->value = value;
+	temp->next = NULL;
+	temp->index = -1;
+	ft_lstadd_back(head, temp);
 }
 
-void	insert(t_list *node, t_list **list)
+
+void	node(t_list *node, t_list **list)
 {
 	t_list *temp;
 
@@ -42,41 +43,43 @@ void	insert(t_list *node, t_list **list)
 	temp->next = node;
 }
 
-int	ft_atoi2(char *str)
+int	ft_atoi2(char **str, t_list **a)
 {
-	long	signal;
-	long	num;
-	t_list	**a = NULL;
+	long long	num;
+	int			conv;
 
-	signal = 1;
 	num = 0;
-	while (*str == ' ' || *str == '\t')
-		str += 1;
-	if (*str == '+' || *str == '-')
+	conv = 1;
+	if (**str == '-' || **str == '+')
 	{
-		if (*str == '-')
-			signal = -1;
-		str += 1;
+		if (**str == '-')
+			conv *= -1;
+		*str += 1;
 	}
-	while (*str >= '0' && *str <= '9')
+	while (**str >= '0' && *(*str) <= '9')
 	{
-		num = num * 10 + (*str - 48) * signal;
-		str += 1;
+		num = (num * 10 + (conv * (**str - '0')));
 		if (num > INT_MAX || num < INT_MIN)
 			exit_prog(1, a);
+		*str += 1;
 	}
+	while (**str == ' ' || (**str > 8 && **str < 14))
+		*str += 1;
+	if (**str && (**str > 8 && **str < 14) && (**str != ' '))
+		exit_prog(1, a);
 	return (num);
 }
 
 int	is_ordered(t_list *a)
 {
-	if (!a)
-		return (0);
-	while (a->next)
+	if (a)
 	{
-		if (a->value > a->next->value)
-			return (0);
-		a = a->next;
+		while (a->next != NULL && (a))
+		{
+			if (a->value > a->next->value)
+				return (0);
+			a = a->next;
+		}
 	}
 	return (1);
 }

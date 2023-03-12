@@ -6,13 +6,13 @@
 /*   By: vpacheco <vpacheco@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/27 16:23:26 by vpacheco          #+#    #+#             */
-/*   Updated: 2023/02/28 16:07:44 by vpacheco         ###   ########.fr       */
+/*   Updated: 2023/03/12 16:05:47 by vpacheco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/push_swap.h"
 
-int	rra(t_list **a)
+void	rra(t_list **a)
 {
 	t_list	*tmp;
 	t_list	*tmp_last;
@@ -26,7 +26,7 @@ int	rra(t_list **a)
 	ft_printf("rra\n");
 }
 
-int	rrb(t_list **b)
+void	rrb(t_list **b)
 {
 	t_list	*tmp;
 	t_list	*tmp_last;
@@ -40,7 +40,7 @@ int	rrb(t_list **b)
 	ft_printf("rrb\n");
 }
 
-int	rrr(t_list **a, t_list **b)
+void	rrr(t_list **a, t_list **b)
 {
 	t_list	*tmp;
 	t_list	*tmp_last;
