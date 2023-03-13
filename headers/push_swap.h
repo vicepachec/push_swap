@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: vpacheco <vpacheco@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/08 17:08:01 by vpacheco          #+#    #+#             */
-/*   Updated: 2023/03/12 20:12:56 by vpacheco         ###   ########.fr       */
+/*   Created: 2023/03/13 16:44:13 by vpacheco          #+#    #+#             */
+/*   Updated: 2023/03/13 16:44:15 by vpacheco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,4 +32,6 @@ void		algo_3(t_list **a);
 void		insert(t_list **head, int item);
 t_list		*new_node(int value);
 void 		algo_4(t_list **a, t_list **b);
+void		algo_5(t_list **a, t_list **b);
+void 		print_list(t_list *a);
 #endif

@@ -6,7 +6,7 @@
 /*   By: vpacheco <vpacheco@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/06 16:52:08 by vpacheco          #+#    #+#             */
-/*   Updated: 2023/03/12 20:23:48 by vpacheco         ###   ########.fr       */
+/*   Updated: 2023/03/13 16:55:13 by vpacheco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	main(int ac, char **av)
 	if (ac <= 1)
 		exit_prog(0, &a);
 	parse_values(av, &a);
-	while (is_ordered(a) == 0)
+	if (is_ordered(a) == 0)
 	{
 		if (ft_lstsize(a) == 2)
 			sa(&a);
@@ -30,6 +30,8 @@ int	main(int ac, char **av)
 			algo_3(&a);
 		if (ft_lstsize(a) == 4)
 			algo_4(&a, &b);
+		if (ft_lstsize(a) == 5)
+			algo_5(&a, &b);
 	}
 	exit_prog(0, &a);
 }

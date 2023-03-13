@@ -6,7 +6,7 @@
 /*   By: vpacheco <vpacheco@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 16:47:16 by vpacheco          #+#    #+#             */
-/*   Updated: 2023/03/12 17:44:12 by vpacheco         ###   ########.fr       */
+/*   Updated: 2023/03/13 16:43:35 by vpacheco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,6 +92,15 @@ void	max_min(t_list *a, int *min, int *max)
 			*min = a->value;
 		if (a->value > *max)
 			*max = a->value;
+		a = a->next;
+	}
+}
+
+void print_list(t_list *a)
+{
+	while (a != NULL)
+	{
+		printf("%i\n", a->value);
 		a = a->next;
 	}
 }
