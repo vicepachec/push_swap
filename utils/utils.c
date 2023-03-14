@@ -6,7 +6,7 @@
 /*   By: vpacheco <vpacheco@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 16:47:16 by vpacheco          #+#    #+#             */
-/*   Updated: 2023/03/13 16:43:35 by vpacheco         ###   ########.fr       */
+/*   Updated: 2023/03/14 18:05:25 by vpacheco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,22 +25,22 @@ void	insert(t_list **head, int value)
 	ft_lstadd_back(head, temp);
 }
 
-
-void	node(t_list *node, t_list **list)
+int	is_dup(t_list *a)
 {
-	t_list *temp;
+	t_list	*tmp;
 
-	if (node == NULL)
-		return ;
-	if (*list == NULL)
+	while (a)
 	{
-		*list = node;
-		return ;
+		tmp = a->next;
+		while (tmp)
+		{
+			if (a->value == tmp->value)
+				return (0);
+			tmp = tmp->next;
+		}
+		a = a->next;
 	}
-	temp = *list;
-	while (temp->next != NULL)
-		temp = temp->next;
-	temp->next = node;
+	return (1);
 }
 
 int	ft_atoi2(char **str, t_list **a)
@@ -86,21 +86,12 @@ int	is_ordered(t_list *a)
 
 void	max_min(t_list *a, int *min, int *max)
 {
-	while(a)
+	while (a)
 	{
 		if (a->value < *min)
 			*min = a->value;
 		if (a->value > *max)
 			*max = a->value;
-		a = a->next;
-	}
-}
-
-void print_list(t_list *a)
-{
-	while (a != NULL)
-	{
-		printf("%i\n", a->value);
 		a = a->next;
 	}
 }

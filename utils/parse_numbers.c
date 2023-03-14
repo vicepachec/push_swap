@@ -6,7 +6,7 @@
 /*   By: vpacheco <vpacheco@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 15:02:20 by vpacheco          #+#    #+#             */
-/*   Updated: 2023/03/12 17:37:08 by vpacheco         ###   ########.fr       */
+/*   Updated: 2023/03/14 18:07:12 by vpacheco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,5 +46,14 @@ void	parse_values(char **av, t_list **a)
 			num = ft_atoi2(&str, a);
 			insert(a, num);
 		}
+	}
+}
+
+void	print_list(t_list *a)
+{
+	while (a != NULL)
+	{
+		printf("%i\n", a->value);
+		a = a->next;
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: vpacheco <vpacheco@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 15:48:47 by vpacheco          #+#    #+#             */
-/*   Updated: 2023/03/13 16:56:28 by vpacheco         ###   ########.fr       */
+/*   Updated: 2023/03/14 18:06:27 by vpacheco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	algo_3(t_list **a)
 {
-	int min;
-	int max;
+	int		min;
+	int		max;
 
 	min = INT_MAX;
 	max = INT_MIN;
@@ -28,10 +28,10 @@ void	algo_3(t_list **a)
 		sa(a);
 }
 
-void 	algo_4(t_list **a, t_list **b)
+void	algo_4(t_list **a, t_list **b)
 {
-	int min;
-	int max;
+	int		min;
+	int		max;
 
 	min = INT_MAX;
 	max = INT_MIN;
@@ -40,7 +40,7 @@ void 	algo_4(t_list **a, t_list **b)
 	{
 		while ((*a)->value != min && (*a)->value != max)
 			ra(a);
-		pb(a, b);
+		pb(b, a);
 		algo_3(a);
 		pa(a, b);
 		if ((*a)->value == max)
@@ -50,25 +50,20 @@ void 	algo_4(t_list **a, t_list **b)
 
 void	algo_5(t_list **a, t_list **b)
 {
-	int min;
-	int max;
+	int		min;
+	int		max;
 
 	min = INT_MAX;
-	max = INT_MIN;	// print_list(a);
+	max = INT_MIN;
 	max_min(*a, &min, &max);
 	if (!is_ordered(*a))
 	{
 		while ((*a)->value != min && (*a)->value != max)
 			ra(a);
-		pb(a, b);
+		pb(b, a);
 		algo_4(a, b);
 		pa(a, b);
 		if ((*a)->value == max)
 			ra(a);
 	}
-}
-
-void	big_algo(t_list **a, t_list **b)
-{
-	
 }

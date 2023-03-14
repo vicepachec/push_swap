@@ -6,7 +6,7 @@
 /*   By: vpacheco <vpacheco@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/06 16:52:08 by vpacheco          #+#    #+#             */
-/*   Updated: 2023/03/13 16:55:13 by vpacheco         ###   ########.fr       */
+/*   Updated: 2023/03/14 18:07:30 by vpacheco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ int	main(int ac, char **av)
 	if (ac <= 1)
 		exit_prog(0, &a);
 	parse_values(av, &a);
+	if (is_dup(a) == 0)
+		exit_prog(1, &a);
 	if (is_ordered(a) == 0)
 	{
 		if (ft_lstsize(a) == 2)
@@ -32,6 +34,8 @@ int	main(int ac, char **av)
 			algo_4(&a, &b);
 		if (ft_lstsize(a) == 5)
 			algo_5(&a, &b);
+		if (ft_lstsize(a) >= 6)
+			radix_sort(&a, &b);
 	}
 	exit_prog(0, &a);
 }

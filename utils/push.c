@@ -6,7 +6,7 @@
 /*   By: vpacheco <vpacheco@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/27 15:37:58 by vpacheco          #+#    #+#             */
-/*   Updated: 2023/03/12 20:09:58 by vpacheco         ###   ########.fr       */
+/*   Updated: 2023/03/14 14:23:03 by vpacheco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	pa(t_list **a, t_list **b)
 	ft_printf("pa\n");
 }
 
-void	pb(t_list **a, t_list **b)
+void	pb(t_list **b, t_list **a)
 {
 	t_list	*tmp;
 	t_list	*tmp2;

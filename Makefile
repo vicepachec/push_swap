@@ -7,6 +7,7 @@ SRCS	=	main.c \
 			utils/rotate.c \
 			utils/reverserotate.c \
 			utils/push.c \
+			utils/big_algo.c \
 			
 OBJS	= $(SRCS:.c=.o)
 
@@ -14,7 +15,7 @@ NAME	= push_swap
 
 CC		= cc
 
-CFLAGS	= -Wall -Wextra -Werror -g -fsanitize=address
+CFLAGS	= -Wall -Wextra -Werror -g #-fsanitize=address
 
 RM		= rm -rf
 
